@@ -1,0 +1,62 @@
+{% extends 'Layouts/Base.html' %}
+
+{% block title %}
+<title>Admin Starter | Members</title>
+{% endblock %}
+
+{% block content %}
+<div class="content custom-wrapper">
+  <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="row">
+          <div class="col-sm-6">
+            <h1 class="m-0">{{ page }}</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">{{ page }}</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div>
+    <!-- /.content-header -->
+
+  <div class="container-fluid">
+      <div class="card card-primary card-outline">
+        <div class="card-body">
+           <table id="table" class="table table-hover table-striped">
+              <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Content</th>
+                    <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for row in posts %}
+                <tr>
+                    <th scope="row">{{ row.id }}</th>
+                    <td>{{ row.title }}</td>
+                    <td>{{ row.body }}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm">
+                            <i class="far fa-eye"></i>
+                        </button>
+                        <button class="btn btn-success btn-sm">
+                            <i class="far fa-edit"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

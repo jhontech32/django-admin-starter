@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% block title %}{% endblock %}
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="{% static 'vendor/Adminlte/plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'vendor/Adminlte/dist/css/adminlte.min.css' %}">
+  <!-- Datatable -->
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/DataTable/css/datatable.css' %}">
+  <!-- Selector 2 -->
+  <link href="{% static 'vendor/Select2/css/selector2.css' %}" rel="stylesheet" />
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="{% static 'custom/css/style.css' %}">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Loader -->
+  {% include 'Preloader/index.html' %}
+
+  <!-- Navbar -->
+  {% include 'Navbar/index.html' %}
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  {% include 'Sidebar/index.html' %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Main content -->
+    {% block content %}
+    {% endblock %}
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+    <div class="p-3">
+      <h5>Title</h5>
+      <p>Sidebar content</p>
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="float-right d-none d-sm-inline">
+      Anything you want
+    </div>
+    <!-- Default to the left -->
+    Copyright &copy; 2022 <a href="https://adminlte.io"> astromedia</a>. all rights reserved.
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="{% static 'vendor/Adminlte/plugins/jquery/jquery.min.js' %}"></script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'vendor/Adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- Select 2 -->
+<script src="{% static 'vendor/Select2/js/select2.js' %}"></script>
+<!-- Datatable -->
+<script type="text/javascript" charset="utf8" src="{% static 'vendor/DataTable/js/datatable.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'vendor/Adminlte/dist/js/adminlte.min.js' %}"></script>
+<!-- Custom JS -->
+<script src="{% static 'custom/js/scripts.js' %}"></script>
+</body>
+</html>

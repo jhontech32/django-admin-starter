@@ -1,0 +1,16 @@
+{% extends 'Layouts/Base.html' %}
+
+{% block title %}
+<title>Register - myweb</title>
+{% endblock %}
+
+{% block content %}
+<form method="POST" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br />
+    <button type="submit">
+        Register
+    </button>
+</form>
+{% endblock %}
