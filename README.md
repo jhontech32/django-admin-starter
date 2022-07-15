@@ -12,6 +12,8 @@ What i learnedin this project ?
 - Connect to local DB
 - DataTable integration
 - Select2 component integration
+- Validation view url route showup by roles & permissions
+- Validation menu templates showup by user.is_staf or None
 
 -------------------------------------------------
 Knowledge about Django Python
