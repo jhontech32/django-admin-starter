@@ -11,3 +11,6 @@ What i learnedin this project ?
 - Connect to local DB
 - DataTable integration
 - Select2 component integration
+
+-------------------------------------------------
+Feel free for learning using this project or clone this project.
