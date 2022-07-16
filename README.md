@@ -14,6 +14,7 @@ What i learnedin this project ?
 - Select2 component integration
 - Validation view url route showup by roles & permissions
 - Validation menu templates showup by user.is_staf or None
+- Reset Password by sending SMTP Email directly
 
 -------------------------------------------------
 Knowledge about Django Python
