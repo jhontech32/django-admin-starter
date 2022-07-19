@@ -1,16 +1,16 @@
 from django.shortcuts import render
-import requests
+
+from .forms import CustomerForm
 
 # Create your views here.
 def index(request):
-    # pull data from third party rest api
-    response = requests.get('https://jsonplaceholder.typicode.com/users')
+   customer = request.user.customer
+   form = CustomerForm(instance=customer)
 
-    # convert reponse data into json
-    users = response.json()
+   if request.method == 'POST':
+       form = CustomerForm(request.POST, request.FILES, instance=customer)
+       if form.is_valid():
+           form.save()
 
-    context = {
-        'page': 'Members',
-        'users': users
-    }
-    return render(request, 'Members/index.html', context)
+   context = {'form': form}
+   return render(request, 'Members/index.html', context)
