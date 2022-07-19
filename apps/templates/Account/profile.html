@@ -1,10 +1,51 @@
 {% extends 'Layouts/Base.html' %}
-
+{% load static %}
 {% block title %}
 <title>Admin Starter | Profile</title>
 {% endblock %}
 
 {% block content %}
-<h3>Profile</h3>
-<p>This is profile page !</p>
+<div class="content custom-wrapper">
+  <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="row">
+          <div class="col-sm-6">
+            <h1 class="m-0">{{ page }}</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">{{ page }}</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div>
+    <!-- /.content-header -->
+
+  <div class="container-fluid">
+      <div class="card card-primary card-outline">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Profile</h3>
+                    <div class="card" style="width: 10rem;">
+                        {% if request.user.customer_user.profile_pic.url %}
+                            <img src="{{ request.user.customer_user.profile_pic.url }}" class="img elevation-2" alt="User Image">
+                        {% else %}
+                            <img src="{% static 'assets/user-role.png' %}" width="300px" class="img-thumbnail rounded">
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-9">
+                   <form method="post" enctype="multipart/form-data" novalidate>
+                       {% csrf_token %}
+                       {{ form.as_p }}
+                       <input class="btn btn-primary" type="submit" name="Update Information">
+                   </form>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
 {% endblock %}

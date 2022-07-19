@@ -3,5 +3,5 @@ from django.contrib.auth import views as auth_views
 from . import views
 
 urlpatterns = [
-    path('profile', views.index, name='profile'),
+    path('profile', views.profile, name='profile'),
 ]

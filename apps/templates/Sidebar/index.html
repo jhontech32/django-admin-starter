@@ -11,11 +11,19 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-2 pb-2 mb-2 d-flex">
         <div class="image mr-3 mt-2">
-          <img src="{% static 'assets/user-role.png' %}" class="img elevation-2" alt="User Image">
+          {% if request.user.customer_user.profile_pic.url %}
+            <img src="{{ request.user.customer_user.profile_pic.url }}" class="img elevation-2" alt="User Image">
+          {% else %}
+            <img src="{% static 'assets/user-role.png' %}" width="300px" class="img-thumbnail rounded">
+          {% endif %}
         </div>
         <div class="info-box-content">
-          <a href="#" class="d-block">{{ request.user }}</a>
-          <h6><span class="badge badge-secondary">IT Staff</span></h6>
+          <a href="#" class="d-block pb-1"><b>{{ request.user.customer_user.name }}</b></a>
+          <h6><span class="badge badge-primary">
+            <a href="{% url 'profile' %}">
+                Edit Profile
+            </a>
+          </span></h6>
         </div>
       </div>
 
@@ -45,6 +53,7 @@
               </p>
             </a>
           </li>
+          {% if request.user.is_staff %}
           <li class="nav-item">
             <a href="{% url 'members' %}" class="nav-link">
               <i class="nav-icon fas fa-user-friends"></i>
@@ -53,6 +62,8 @@
               </p>
             </a>
           </li>
+          {% endif %}
+          {% if request.user.is_staff %}
           <li class="nav-item">
             <a href="{% url 'posted' %}" class="nav-link">
               <i class="nav-icon fas fa-newspaper"></i>
@@ -61,15 +72,8 @@
               </p>
             </a>
           </li>
+          {% endif %}
           <li class="nav-header">Account Info</li>
-          <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="nav-icon fas fa-id-card-alt"></i>
-              <p>
-                Profile
-              </p>
-            </a>
-          </li>
           <li class="nav-item">
             <a href="" class="nav-link">
               <i class="nav-icon fab fa-keycdn"></i>
@@ -92,3 +96,11 @@
     </div>
     <!-- /.sidebar -->
   </aside>
+
+<!--<script>-->
+<!--  n =  new Date();-->
+<!--  y = n.getFullYear();-->
+<!--  m = n.getMonth() + 1;-->
+<!--  d = n.getDate();-->
+<!--  document.getElementById("date").innerHTML = d + " / " + m + " / " + y-->
+<!--</script>-->
