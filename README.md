@@ -29,4 +29,7 @@ Knowledge about Django Python
 - Object has no class _meta its mean no data at all in table
 -------------------------------------------------
 
+Inspiration learning from: https://github.com/divanov11/crash-course-CRM
+Website: https://dennis-sourcecode.herokuapp.com/1/
+
 Feel free for learning using this project or clone this project.
