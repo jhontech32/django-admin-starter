@@ -19,6 +19,7 @@ What i learnedin this project ?
 - Upload Picture using Pillow
 - Custom user models and make Relation to default user model django (OneToOne)
 - Push Notification Integration ( FCM Firebase )
+- Local settings using .env ( django-environ )
 
 => Testing Notification ( LOCAL ) : 127.0.0.1:8000/notification
 
