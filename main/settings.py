@@ -47,8 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Add apps
-    'apps',
-    'apps.account',
+    'app',
+    'app.account',
     # Add libs
     'crispy_forms'
 ]
@@ -139,7 +139,7 @@ LOGOUT_REDIRECT_URL = '/admin/login/'
 STATIC_URL = '/static/'
 STATICFILES_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'apps/media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'app/media/')
 
 # Email SMTP Configuration
 # import into it, ex: django.core.mail.backends.smtp.EmailBackend

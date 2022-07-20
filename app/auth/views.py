@@ -4,7 +4,8 @@ from django.contrib import messages
 
 # Create your views here.
 from .forms import CreateUserForm
-from .decorators import unauthenticated_user
+
+from app.decorators import unauthenticated_user
 
 @unauthenticated_user
 def registerPage(request):

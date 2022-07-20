@@ -16,13 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
+
 from . import settings
+from . import functions
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('apps.dashboard.urls')),
-    path('auth/', include('apps.auth.urls')),
-    path('account/', include('apps.account.urls')),
-    path('members', include('apps.members.urls')),
-    path('posted', include('apps.posted.urls'))
+    path('auth/', include('app.auth.urls')),
+    path('account/', include('app.account.urls')),
+
+    # path('firebase-messaging-sw.js', functions.showFirebaseJS, name='show_firebase_js'),
+    path('notification/', include('app.notification.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
