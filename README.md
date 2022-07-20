@@ -16,10 +16,11 @@ What i learnedin this project ?
 - Validation menu templates showup by user.is_staf or None
 - Reset Password by sending SMTP Email directly
 - Update Profile
-- Upload Picture using Pillow
+- Upload Picture using ( Pillow )
 - Custom user models and make Relation to default user model django (OneToOne)
 - Push Notification Integration ( FCM Firebase )
 - Local settings using .env ( django-environ )
+- Form integration ( django-crispy-form )
 
 => Testing Notification ( LOCAL ) : 127.0.0.1:8000/notification
 
